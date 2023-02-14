@@ -1,8 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 import styled from 'styled-components';
 
 import Button from 'components/atoms/Button';
+
+import { UpDownButtonPropsType } from './index.type';
 
 const Root = styled.div`
   display: inline-flex;
@@ -10,7 +12,7 @@ const Root = styled.div`
   align-items: center;
 `;
 
-const PageIndexText = styled.p`
+const Text = styled.p`
   width: 100px;
   text-align: center;
   text-overflow: ellipsis;
@@ -18,21 +20,16 @@ const PageIndexText = styled.p`
   overflow: hidden;
 `;
 
-export default function PageMoveButton({
-  defaultPage,
+export default function UpDownButton({
+  propNumber,
   max,
   min,
   onChange,
-}: {
-  defaultPage?: number;
-  max?: number;
-  min?: number;
-  onChange?: (value: number) => void;
-}): JSX.Element {
-  const [number, setNumber] = useState<number>(defaultPage ?? 0);
+}: UpDownButtonPropsType): JSX.Element {
+  const [number, setNumber] = useState<number>(0);
 
-  const isNumberMoreThanMax: boolean = !!max && number >= max;
-  const isNumberLessThanMin: boolean = !!min && number <= min;
+  const isNumberMoreThanMax: boolean = typeof max === 'number' && number >= max;
+  const isNumberLessThanMin: boolean = typeof min === 'number' && number <= min;
 
   const increaseNumber = (): void => {
     setNumber((state) => state + 1);
@@ -48,9 +45,16 @@ export default function PageMoveButton({
     }
   }, [onChange, number]);
 
+  useMemo(() => {
+    const isPropNumberTypeNumber = typeof propNumber === 'number';
+    if (isPropNumberTypeNumber) {
+      setNumber(propNumber);
+    }
+  }, [propNumber]);
+
   return (
     <Root>
-      <PageIndexText>{number}</PageIndexText>
+      <Text>{number}</Text>
       <Button onClick={decreaseNumber} isDisabled={isNumberLessThanMin}>
         - Decrease
       </Button>
