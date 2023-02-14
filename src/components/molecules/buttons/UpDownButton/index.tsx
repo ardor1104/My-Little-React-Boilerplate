@@ -35,15 +35,11 @@ export default function PageMoveButton({
   const isNumberLessThanMin: boolean = !!min && number <= min;
 
   const increaseNumber = (): void => {
-    if (!isNumberMoreThanMax) {
-      setNumber((state) => state + 1);
-    }
+    setNumber((state) => state + 1);
   };
 
   const decreaseNumber = (): void => {
-    if (!isNumberLessThanMin) {
-      setNumber((state) => state - 1);
-    }
+    setNumber((state) => state - 1);
   };
 
   useEffect(() => {

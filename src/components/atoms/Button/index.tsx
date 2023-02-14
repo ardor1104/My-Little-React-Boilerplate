@@ -1,19 +1,10 @@
-import { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 
 import styled, { css } from 'styled-components';
 
-interface PropsType {
-  children: ReactNode;
-  kind?: 'mono' | 'underline' | 'text' | 'dangerous';
-  size?: 'lg' | 'md' | 'sm';
-  to?: string;
-  href?: string;
-  onClick?: () => void;
-  isDisabled?: boolean;
-}
+import { ButtonPropsType } from './index.type';
 
-const styles = css<Pick<PropsType, 'kind' | 'size' | 'isDisabled'>>`
+const styles = css<Pick<ButtonPropsType, 'kind' | 'size' | 'isDisabled'>>`
   border-radius: ${(props) =>
     `${
       props.size === 'lg' || props.size === 'md'
@@ -25,7 +16,7 @@ const styles = css<Pick<PropsType, 'kind' | 'size' | 'isDisabled'>>`
       ? props.size === 'lg'
         ? '16px 40px'
         : props.size === 'md'
-        ? '8px 12px'
+        ? '8px 16px'
         : '6px 8px'
       : null};
   display: inline-flex;
@@ -34,6 +25,12 @@ const styles = css<Pick<PropsType, 'kind' | 'size' | 'isDisabled'>>`
   width: fit-content;
   height: fit-content;
   font-size: ${(props) =>
+    props.size === 'lg'
+      ? props.theme.sizes.font.xl
+      : props.size === 'md'
+      ? props.theme.sizes.font.lg
+      : props.theme.sizes.font.sm};
+  line-height: ${(props) =>
     props.size === 'lg'
       ? props.theme.sizes.font.xl
       : props.size === 'md'
@@ -104,7 +101,9 @@ const styles = css<Pick<PropsType, 'kind' | 'size' | 'isDisabled'>>`
   }
 `;
 
-const StyledLink = styled(({ onClick, href, ...props }) => <Link {...props} />)`
+const StyledLink = styled(({ href, isDisabled, ...props }) => (
+  <Link {...props} />
+))`
   ${styles}
 `;
 
@@ -120,21 +119,31 @@ export default function Button({
   children,
   kind = 'mono',
   size = 'md',
+  onClick,
+  disabledOnClick,
   ...props
-}: PropsType): JSX.Element {
-  const { to } = props;
+}: ButtonPropsType): JSX.Element {
+  const { to, isDisabled } = props;
   const isAnchor: boolean = kind === 'underline' || kind === 'text';
 
+  const onButtonClick = (): void => {
+    if (isDisabled && disabledOnClick) {
+      disabledOnClick();
+    } else if (onClick) {
+      onClick();
+    }
+  };
+
   return to ? (
-    <StyledLink kind={kind} size={size} {...props}>
+    <StyledLink onClick={onButtonClick} kind={kind} size={size} {...props}>
       {children}
     </StyledLink>
   ) : isAnchor ? (
-    <Anchor kind={kind} size={size} {...props}>
+    <Anchor onClick={onButtonClick} kind={kind} size={size} {...props}>
       {children}
     </Anchor>
   ) : (
-    <StyledButton kind={kind} size={size} {...props}>
+    <StyledButton onClick={onButtonClick} kind={kind} size={size} {...props}>
       {children}
     </StyledButton>
   );
