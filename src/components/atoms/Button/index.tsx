@@ -132,7 +132,7 @@ export default function Button({
 
     if (isDisabled && isDisabledOnClickExist) {
       disabledOnClick();
-    } else if (isOnclickExist) {
+    } else if (!isDisabled && isOnclickExist) {
       onClick();
     }
   };
