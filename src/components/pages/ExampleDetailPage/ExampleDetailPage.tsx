@@ -32,7 +32,7 @@ export default function ExampleDetailPage(): JSX.Element {
     <PageTemplate header={<BodyHeader />}>
       <Root>ExampleDetailPage{`[${exampleId}]`}</Root>
       <PageMoveButton
-        defaultPage={1}
+        defaultNumber={1}
         max={10}
         min={0}
         onChange={onPageMoveBUttonChagne}
