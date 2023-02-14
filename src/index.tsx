@@ -15,7 +15,6 @@ import GlobalStyle from 'components/GlobalStyle';
 const MOUNT_NODE = document.getElementById('app');
 
 const render = (rootNode: Element) => {
-  console.log();
   createRoot(rootNode).render(
     <Provider store={store}>
       <ErrorBoundary>
