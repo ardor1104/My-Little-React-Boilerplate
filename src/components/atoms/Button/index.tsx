@@ -127,9 +127,12 @@ export default function Button({
   const isAnchor: boolean = kind === 'underline' || kind === 'text';
 
   const onButtonClick = (): void => {
-    if (isDisabled && disabledOnClick) {
+    const isDisabledOnClickExist = !!disabledOnClick;
+    const isOnclickExist = !!onClick;
+
+    if (isDisabled && isDisabledOnClickExist) {
       disabledOnClick();
-    } else if (onClick) {
+    } else if (isOnclickExist) {
       onClick();
     }
   };
