@@ -35,7 +35,12 @@ module.exports = {
     config.resolve.alias = {
       ...config.resolve.alias,
       components: path.resolve(__dirname, '../../src/components'),
+      resources: path.resolve(__dirname, '../../src/resources'),
+      theme: path.resolve(__dirname, '../../src/theme'),
+      store: path.resolve(__dirname, '../../src/store'),
+      redux: path.resolve(__dirname, '../../src/redux'),
       hooks: path.resolve(__dirname, '../../src/hooks'),
+      utils: path.resolve(__dirname, '../../src/utils'),
     };
     return config;
   },
