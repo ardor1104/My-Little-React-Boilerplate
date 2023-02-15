@@ -3,7 +3,7 @@ import MainPage from '.';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 export default {
-  title: 'MainPage',
+  title: 'pages/MainPage',
   component: MainPage,
 } as ComponentMeta<typeof MainPage>;
 
