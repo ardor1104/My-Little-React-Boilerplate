@@ -4,13 +4,11 @@ import { Provider } from 'react-redux';
 import 'sanitize.css';
 
 import store from 'store';
-import theme from 'theme';
 
-import { ThemeProvider } from 'styled-components';
-
+import GlobalStyle from 'components/GlobalStyle';
 import App from 'components/App';
 import ErrorBoundary from 'components/pages/ErrorBoundary';
-import GlobalStyle from 'components/GlobalStyle';
+import ThemeTemplate from 'components/templates/ThemeTemplate';
 
 const MOUNT_NODE = document.getElementById('app');
 
@@ -18,10 +16,10 @@ const render = (rootNode: Element) => {
   createRoot(rootNode).render(
     <Provider store={store}>
       <ErrorBoundary>
-        <ThemeProvider theme={theme}>
+        <ThemeTemplate>
           <App />
           <GlobalStyle />
-        </ThemeProvider>
+        </ThemeTemplate>
       </ErrorBoundary>
     </Provider>,
   );
