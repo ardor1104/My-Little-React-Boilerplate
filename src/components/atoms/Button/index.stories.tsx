@@ -26,13 +26,21 @@ export default {
   },
 } as ComponentMeta<typeof Button>;
 
-export const Default: ComponentStory<typeof Button> = () => {
-  const kind: any = select('kind', kindOptions, 'mono');
-  const size: any = select('size', sizeOptions, 'md');
-  const value: string = text('value', 'Default');
-  const to: string = text('to', '');
-  const href: string = text('href', '');
-  const isDisabled = boolean('isDisabled', false);
+export const Default: ComponentStory<typeof Button> = ({
+  kind,
+  size,
+  to,
+  href,
+  isDisabled,
+  onClick,
+  disabledOnClick,
+}) => {
+  const kindKnob: any = select('kind', kindOptions, 'mono');
+  const sizeKnob: any = select('size', sizeOptions, 'md');
+  const valueKnob: string = text('value', 'Default');
+  const toKnob: string = text('to', '');
+  const hrefKnob: string = text('href', '');
+  const isDisabledKnob = boolean('isDisabled', false);
 
   const emptyTextConverter = (text: string): string | undefined => {
     if (text === '') {
@@ -44,15 +52,17 @@ export const Default: ComponentStory<typeof Button> = () => {
 
   return (
     <Button
-      kind={kind}
-      size={size}
-      to={emptyTextConverter(to)}
-      href={emptyTextConverter(href)}
-      isDisabled={isDisabled}
-      onClick={action('onClick')}
-      disabledOnClick={action('disabledOnClick')}
+      kind={kind ? kind : kindKnob}
+      size={size ? size : sizeKnob}
+      to={to ? to : emptyTextConverter(toKnob)}
+      href={href ? href : emptyTextConverter(hrefKnob)}
+      isDisabled={isDisabled ? isDisabled : isDisabledKnob}
+      onClick={onClick ? onClick : action('onClick')}
+      disabledOnClick={
+        disabledOnClick ? disabledOnClick : action('disabledOnClick')
+      }
     >
-      {value}
+      {valueKnob}
     </Button>
   );
 };
