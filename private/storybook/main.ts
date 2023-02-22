@@ -19,14 +19,14 @@ module.exports = {
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
       shouldExtractLiteralValuesFromEnum: true,
-      propFilter: (prop) =>
+      propFilter: (prop: any) =>
         prop.parent ? !/node_modules/.test(prop.parent.fileName) : true,
     },
   },
   features: {
     postcss: false,
   },
-  webpackFinal: async (config) => {
+  webpackFinal: async (config: any) => {
     config.resolve.modules = [
       path.resolve(__dirname, '..'),
       'node_modules',

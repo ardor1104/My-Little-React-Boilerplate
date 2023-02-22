@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
-__webpack_base_uri__ = 'http://localhost:8080';
+const __webpack_base_uri__ = 'http://localhost:8080';
 
 module.exports = (options) => ({
   mode: options.mode,
