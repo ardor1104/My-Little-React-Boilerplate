@@ -10,17 +10,22 @@ export default {
   decorators: [withKnobs],
 } as ComponentMeta<typeof UpDownButton>;
 
-export const Default: ComponentStory<typeof UpDownButton> = () => {
-  const propNumber = number('propNumber', 0);
-  const max = number('max', 10);
-  const min = number('min', 0);
+export const Default: ComponentStory<typeof UpDownButton> = ({
+  propNumber,
+  max,
+  min,
+  onChange,
+}) => {
+  const propNumberKnob = number('propNumber', 0);
+  const maxKnob = number('max', 10);
+  const minKnob = number('min', 0);
 
   return (
     <UpDownButton
-      propNumber={propNumber}
-      max={max}
-      min={min}
-      onChange={action(`onChnage`)}
+      propNumber={propNumber ? propNumber : propNumberKnob}
+      max={max ? max : maxKnob}
+      min={min ? min : minKnob}
+      onChange={onChange ? onChange : action(`onChnage`)}
     />
   );
 };
