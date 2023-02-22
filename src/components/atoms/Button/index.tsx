@@ -138,15 +138,33 @@ export default function Button({
   };
 
   return to ? (
-    <StyledLink onClick={onButtonClick} kind={kind} size={size} {...props}>
+    <StyledLink
+      role='button'
+      onClick={onButtonClick}
+      kind={kind}
+      size={size}
+      {...props}
+    >
       {children}
     </StyledLink>
   ) : isAnchor ? (
-    <Anchor onClick={onButtonClick} kind={kind} size={size} {...props}>
+    <Anchor
+      role='button'
+      onClick={onButtonClick}
+      kind={kind}
+      size={size}
+      {...props}
+    >
       {children}
     </Anchor>
   ) : (
-    <StyledButton onClick={onButtonClick} kind={kind} size={size} {...props}>
+    <StyledButton
+      role='button'
+      onClick={onButtonClick}
+      kind={kind}
+      size={size}
+      {...props}
+    >
       {children}
     </StyledButton>
   );
