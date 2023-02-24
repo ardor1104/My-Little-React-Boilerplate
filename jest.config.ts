@@ -81,6 +81,7 @@ export default async (): Promise<Config> => {
       '^redux/(.*)': '<rootDir>/src/redux/$1',
       '^hooks/(.*)': '<rootDir>/src/hooks/$1',
       '^utils/(.*)': '<rootDir>/src/utils/$1',
+      '^lodash-es$': 'lodash',
     },
 
     // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
