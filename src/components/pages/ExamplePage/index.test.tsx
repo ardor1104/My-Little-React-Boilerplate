@@ -8,7 +8,9 @@ import * as stories from './index.stories';
 const { Default } = composeStories(stories);
 
 describe('pages/ExamplePage', () => {
-  it('render ExamplePage', async () => {
-    await act(() => useRender(<Default />));
+  it('render Default', async () => {
+    const component = await act(() => useRender(<Default />));
+
+    expect(component).toMatchSnapshot();
   });
 });

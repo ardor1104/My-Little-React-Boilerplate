@@ -9,6 +9,12 @@ import * as stories from './index.stories';
 const { Default } = composeStories(stories);
 
 describe('molecules/buttons/UpDownButton', () => {
+  it('render Default', async () => {
+    const component = useRender(<Default />);
+
+    expect(component).toMatchSnapshot();
+  });
+
   it('render text and buttons', async () => {
     useRender(<Default />);
 

@@ -9,44 +9,34 @@ import * as stories from './index.stories';
 const { Default } = composeStories(stories);
 
 describe('atoms/Button', () => {
-  it('Default render', async () => {
-    useRender(<Default />);
+  it('render Default', async () => {
+    const component = useRender(<Default />);
 
-    const buttonElement = await screen.getByRole('button');
-
-    expect(buttonElement).toBeInTheDocument();
+    expect(component).toMatchSnapshot();
   });
 
-  it('Link render', async () => {
-    useRender(<Default to='/' />);
+  it('render Link', async () => {
+    const component = useRender(<Default to='/' />);
 
-    const buttonElement = await screen.getByRole('button');
-
-    expect(buttonElement).toBeInTheDocument();
+    expect(component).toMatchSnapshot();
   });
 
-  it('Anchor & kind text render', async () => {
-    useRender(<Default kind='text' />);
+  it('render Anchor & kind text', async () => {
+    const component = useRender(<Default kind='text' />);
 
-    const buttonElement = await screen.getByRole('button');
-
-    expect(buttonElement).toBeInTheDocument();
+    expect(component).toMatchSnapshot();
   });
 
-  it('kind underline render', async () => {
-    useRender(<Default kind='underline' />);
+  it('render kind underline', async () => {
+    const component = useRender(<Default kind='underline' />);
 
-    const buttonElement = await screen.getByRole('button');
-
-    expect(buttonElement).toBeInTheDocument();
+    expect(component).toMatchSnapshot();
   });
 
-  it('kind dangerous render', async () => {
-    useRender(<Default kind='dangerous' />);
+  it('render kind dangerous', async () => {
+    const component = useRender(<Default kind='dangerous' />);
 
-    const buttonElement = await screen.getByRole('button');
-
-    expect(buttonElement).toBeInTheDocument();
+    expect(component).toMatchSnapshot();
   });
 
   it('do click', async () => {

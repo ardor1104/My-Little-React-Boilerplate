@@ -8,7 +8,9 @@ const { Default } = composeStories(stories);
 
 describe('templates/PageTemplates', () => {
   it('render Default', async () => {
-    useRender(<Default />);
+    const component = useRender(<Default />);
+
+    expect(component).toMatchSnapshot();
   });
 
   it('render with header', async () => {
