@@ -1,6 +1,6 @@
-import BodyHeader from '.';
-
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+
+import BodyHeader from '.';
 
 export default {
   title: 'organisms/headers/BodyHeader',

@@ -1,19 +1,20 @@
-import { Component } from 'react';
-
-import { ChildrenPropType } from 'components/globalType';
+import { PureComponent } from 'react';
 
 import logger from 'utils/logger';
 
-export default class ErrorBoundary extends Component<
-  {
-    children: ChildrenPropType;
-  },
-  { hasError: boolean; chunkError: boolean }
+import { ErrorBoundaryPropsType, ErrorBoundaryStateType } from './index.type';
+
+export default class ErrorBoundary extends PureComponent<
+  ErrorBoundaryPropsType,
+  ErrorBoundaryStateType
 > {
-  override state = {
-    hasError: false,
-    chunkError: false,
-  };
+  constructor(props: ErrorBoundaryPropsType) {
+    super(props);
+    this.state = {
+      hasError: false,
+      chunkError: false,
+    };
+  }
 
   static getDerivedStateFromError(error: any) {
     if (
@@ -31,18 +32,21 @@ export default class ErrorBoundary extends Component<
       error.message.indexOf('Chunk') > -1
     ) {
       if (window.navigator.onLine) {
-        location.reload();
+        window?.location.reload();
       }
     }
   }
 
   override render() {
-    if (this.state.hasError) {
+    const { children } = this.props;
+    const { hasError, chunkError } = this.state;
+
+    if (hasError) {
       return <div className='error-page'>ERROR</div>;
-    } else if (this.state.chunkError) {
+    } else if (chunkError) {
       return <div>CHUNK ERROR</div>;
     }
 
-    return this.props.children;
+    return children;
   }
 }

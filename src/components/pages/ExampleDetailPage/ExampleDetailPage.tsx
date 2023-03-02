@@ -28,7 +28,7 @@ export default function ExampleDetailPage(): JSX.Element {
     const isExampleIdNotNan = !isNaN(exampleIdNumber);
 
     if (isPageZero) {
-      navigate(`/example`);
+      navigate('/example');
     } else if (isExampleIdNotNan) {
       setStartingPage(exampleIdNumber);
       setPage(exampleIdNumber);
@@ -37,15 +37,18 @@ export default function ExampleDetailPage(): JSX.Element {
 
   useEffect(() => {
     if (page === 0) {
-      navigate(`/example`);
+      navigate('/example');
     } else {
       navigate(`/example/${page}`);
     }
-  }, [page]);
+  }, [navigate, page]);
 
   return (
     <PageTemplate header={<BodyHeader />}>
-      <Root>ExampleDetailPage{`[${exampleId}]`}</Root>
+      <Root>
+        ExampleDetailPage
+        {`[${exampleId}]`}
+      </Root>
       <UpDownButton
         propNumber={startingPage}
         max={10}

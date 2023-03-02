@@ -11,13 +11,21 @@ module.exports = {
   ],
   rules: {
     'import/prefer-default-export': 'off',
+    'import/no-extraneous-dependencies': 'off',
     'implicit-arrow-linebreak': 'off',
     'operator-linebreak': 'off',
     '@typescript-eslint/no-use-before-define': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
     'react/require-default-props': 'off',
+    'react/function-component-definition': [
+      2,
+      { namedComponents: ['function-declaration', 'arrow-function'] },
+    ],
+    'react-hooks/exhaustive-deps': 'off',
     'jsx-quotes': 'off',
     'no-nested-ternary': 'off',
+    'no-console': 'warn',
+    'no-else-return': 'off',
     'prettier/prettier': [
       'off',
       {},
@@ -79,6 +87,7 @@ module.exports = {
         suffix: ['Type'],
       },
     ],
+    '@typescript-eslint/default-param-last': 'off',
   },
   ignorePatterns: ['*.js'],
   parserOptions: {

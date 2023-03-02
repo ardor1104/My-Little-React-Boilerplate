@@ -1,6 +1,6 @@
-import PageTemplate from '.';
-
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+
+import PageTemplate from '.';
 
 export default {
   title: 'template/PageTemplate',

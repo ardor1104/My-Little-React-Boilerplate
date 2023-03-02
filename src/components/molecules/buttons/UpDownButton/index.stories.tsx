@@ -1,8 +1,8 @@
-import UpDownButton from '.';
-
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { withKnobs, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
+
+import UpDownButton from '.';
 
 export default {
   title: 'molecules/buttons/UpDownButton',
@@ -22,10 +22,10 @@ export const Default: ComponentStory<typeof UpDownButton> = ({
 
   return (
     <UpDownButton
-      propNumber={propNumber ? propNumber : propNumberKnob}
-      max={max ? max : maxKnob}
-      min={min ? min : minKnob}
-      onChange={onChange ? onChange : action(`onChnage`)}
+      propNumber={propNumber || propNumberKnob}
+      max={max || maxKnob}
+      min={min || minKnob}
+      onChange={onChange || action('onChnage')}
     />
   );
 };

@@ -11,8 +11,8 @@ const store = configureStore({
   middleware: [sagaMiddleware],
 });
 
-for (const saga of Object.values(rootSaga)) {
+Object.values(rootSaga).forEach((saga) => {
   sagaMiddleware.run(saga);
-}
+});
 
 export default store;

@@ -1,4 +1,5 @@
-// thx sehvdi
+/* eslint-disable no-console */
+// thx to sehvdi
 import { MODE } from '../../../config';
 
 const isDevelopmentMode = MODE === 'development';

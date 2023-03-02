@@ -1,6 +1,6 @@
-import ExamplePage from '.';
-
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+
+import ExamplePage from '.';
 
 export default {
   title: 'pages/ExamplePage',

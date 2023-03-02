@@ -1,6 +1,6 @@
-import MainPage from '.';
-
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+
+import MainPage from '.';
 
 export default {
   title: 'pages/MainPage',

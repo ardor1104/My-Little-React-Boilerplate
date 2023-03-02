@@ -1,8 +1,8 @@
-import Button from '.';
-
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { withKnobs, select, text, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
+
+import Button from '.';
 
 const kindOptions = {
   mono: 'mono',
@@ -22,7 +22,7 @@ export default {
   component: Button,
   decorators: [withKnobs],
   parameters: {
-    componentSubtitle: `베이스가 되는 버튼 컴포넌트`,
+    componentSubtitle: '베이스가 되는 버튼 컴포넌트',
   },
 } as ComponentMeta<typeof Button>;
 
@@ -42,25 +42,23 @@ export const Default: ComponentStory<typeof Button> = ({
   const hrefKnob: string = text('href', '');
   const isDisabledKnob = boolean('isDisabled', false);
 
-  const emptyTextConverter = (text: string): string | undefined => {
-    if (text === '') {
+  const emptyTextConverter = (value: string): string | undefined => {
+    if (value === '') {
       return undefined;
     }
 
-    return text;
+    return value;
   };
 
   return (
     <Button
-      kind={kind ? kind : kindKnob}
-      size={size ? size : sizeKnob}
-      to={to ? to : emptyTextConverter(toKnob)}
-      href={href ? href : emptyTextConverter(hrefKnob)}
-      isDisabled={isDisabled ? isDisabled : isDisabledKnob}
-      onClick={onClick ? onClick : action('onClick')}
-      disabledOnClick={
-        disabledOnClick ? disabledOnClick : action('disabledOnClick')
-      }
+      kind={kind || kindKnob}
+      size={size || sizeKnob}
+      to={to || emptyTextConverter(toKnob)}
+      href={href || emptyTextConverter(hrefKnob)}
+      isDisabled={isDisabled || isDisabledKnob}
+      onClick={onClick || action('onClick')}
+      disabledOnClick={disabledOnClick || action('disabledOnClick')}
     >
       {valueKnob}
     </Button>
