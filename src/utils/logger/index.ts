@@ -2,6 +2,7 @@
 // thx to sehvdi
 import { MODE } from '../../../config';
 
+// @ts-ignore
 const isDevelopmentMode = MODE === 'development';
 
 const logger = {
