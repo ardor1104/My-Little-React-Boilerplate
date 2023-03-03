@@ -1,6 +1,8 @@
-import { ChildrenPropType } from 'components/globalType';
+import loadable from 'utils/loadable';
 
 import styled from 'styled-components';
+
+import BodyHeader from 'components/organisms/headers/BodyHeader';
 
 const Root = styled.section`
   display: inline-flex;
@@ -9,19 +11,16 @@ const Root = styled.section`
 `;
 
 export default function PageTemplate({
-  children,
-  header,
-  footer,
+  importFunc,
 }: {
-  children: ChildrenPropType;
-  header?: JSX.Element;
-  footer?: JSX.Element;
+  importFunc: () => any;
 }): JSX.Element {
+  const PageContents = loadable(importFunc);
+
   return (
     <Root>
-      {header}
-      {children}
-      {footer}
+      <BodyHeader />
+      <PageContents />
     </Root>
   );
 }

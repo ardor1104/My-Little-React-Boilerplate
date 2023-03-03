@@ -5,97 +5,35 @@ exports[`pages/ExamplePage render Default 1`] = `
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <section
-        class="sc-bcXHqe cgfMzA"
+      <div
+        class="sc-hLBbgP"
       >
-        <header
-          class="sc-eDvSVe sc-jSUZER fXyNOr hCldj"
-        >
-          <div
-            class="sc-gKPRtg xFlkb"
-          >
-            <a
-              class="sc-gswNZR dXalQK"
-              href="/"
-              kind="text"
-              role="button"
-            >
-              MainPage
-            </a>
-            <a
-              class="sc-gswNZR dXalQK"
-              href="/example"
-              kind="text"
-              role="button"
-            >
-              ExamplePage
-            </a>
-          </div>
-        </header>
-        <div
-          class="sc-eDvSVe fXyNOr"
-        />
-        <div
-          class="sc-iBYQkv"
-        >
-          ExamplePage
-        </div>
+        ExamplePage
         <a
-          class="sc-gswNZR goCtzu"
+          class="sc-bcXHqe fzuwDu"
           href="/example/1"
           kind="mono"
           role="button"
         >
           Go To Example Page 1
         </a>
-      </section>
+      </div>
     </div>
   </body>,
   "container": <div>
-    <section
-      class="sc-bcXHqe cgfMzA"
+    <div
+      class="sc-hLBbgP"
     >
-      <header
-        class="sc-eDvSVe sc-jSUZER fXyNOr hCldj"
-      >
-        <div
-          class="sc-gKPRtg xFlkb"
-        >
-          <a
-            class="sc-gswNZR dXalQK"
-            href="/"
-            kind="text"
-            role="button"
-          >
-            MainPage
-          </a>
-          <a
-            class="sc-gswNZR dXalQK"
-            href="/example"
-            kind="text"
-            role="button"
-          >
-            ExamplePage
-          </a>
-        </div>
-      </header>
-      <div
-        class="sc-eDvSVe fXyNOr"
-      />
-      <div
-        class="sc-iBYQkv"
-      >
-        ExamplePage
-      </div>
+      ExamplePage
       <a
-        class="sc-gswNZR goCtzu"
+        class="sc-bcXHqe fzuwDu"
         href="/example/1"
         kind="mono"
         role="button"
       >
         Go To Example Page 1
       </a>
-    </section>
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

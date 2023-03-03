@@ -5,81 +5,19 @@ exports[`pages/MainPage render Default 1`] = `
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <section
-        class="sc-gKPRtg AGlIE"
-      >
-        <header
-          class="sc-hLBbgP sc-eDvSVe hAqkyL huMJkR"
-        >
-          <div
-            class="sc-jSUZER hNxqwn"
-          >
-            <a
-              class="sc-bcXHqe ctdOEe"
-              href="/"
-              kind="text"
-              role="button"
-            >
-              MainPage
-            </a>
-            <a
-              class="sc-bcXHqe ctdOEe"
-              href="/example"
-              kind="text"
-              role="button"
-            >
-              ExamplePage
-            </a>
-          </div>
-        </header>
-        <div
-          class="sc-hLBbgP hAqkyL"
-        />
-        <div
-          class="sc-iBYQkv"
-        >
-          MainPage
-        </div>
-      </section>
-    </div>
-  </body>,
-  "container": <div>
-    <section
-      class="sc-gKPRtg AGlIE"
-    >
-      <header
-        class="sc-hLBbgP sc-eDvSVe hAqkyL huMJkR"
-      >
-        <div
-          class="sc-jSUZER hNxqwn"
-        >
-          <a
-            class="sc-bcXHqe ctdOEe"
-            href="/"
-            kind="text"
-            role="button"
-          >
-            MainPage
-          </a>
-          <a
-            class="sc-bcXHqe ctdOEe"
-            href="/example"
-            kind="text"
-            role="button"
-          >
-            ExamplePage
-          </a>
-        </div>
-      </header>
       <div
-        class="sc-hLBbgP hAqkyL"
-      />
-      <div
-        class="sc-iBYQkv"
+        class="sc-bcXHqe"
       >
         MainPage
       </div>
-    </section>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="sc-bcXHqe"
+    >
+      MainPage
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

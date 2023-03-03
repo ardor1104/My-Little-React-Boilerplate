@@ -1,5 +1,4 @@
 import { composeStories } from '@storybook/testing-react';
-import { act } from '@testing-library/react';
 
 import useRender from 'hooks/useRender';
 
@@ -9,7 +8,7 @@ const { Default } = composeStories(stories);
 
 describe('pages/ExamplePage', () => {
   it('render Default', async () => {
-    const component = await act(() => useRender(<Default />));
+    const component = useRender(<Default />);
 
     expect(component).toMatchSnapshot();
   });

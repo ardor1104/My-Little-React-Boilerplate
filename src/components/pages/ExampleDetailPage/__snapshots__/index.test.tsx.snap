@@ -5,129 +5,67 @@ exports[`pages/ExampleDetailPage render Default 1`] = `
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <section
-        class="sc-bcXHqe cgfMzA"
+      <div
+        class="sc-jSUZER"
       >
-        <header
-          class="sc-eDvSVe sc-jSUZER fXyNOr hCldj"
-        >
-          <div
-            class="sc-gKPRtg xFlkb"
-          >
-            <a
-              class="sc-gswNZR dXalQK"
-              href="/"
-              kind="text"
-              role="button"
-            >
-              MainPage
-            </a>
-            <a
-              class="sc-gswNZR dXalQK"
-              href="/example"
-              kind="text"
-              role="button"
-            >
-              ExamplePage
-            </a>
-          </div>
-        </header>
+        ExampleDetailPage
+        [undefined]
         <div
-          class="sc-eDvSVe fXyNOr"
-        />
-        <div
-          class="sc-pyfCe"
-        >
-          ExampleDetailPage
-          [undefined]
-        </div>
-        <div
-          class="sc-iBYQkv aRxZQ"
+          class="sc-hLBbgP HKOiB"
         >
           <p
-            class="sc-ftTHYK EzcYq"
+            class="sc-eDvSVe kahFsB"
           >
             1
           </p>
           <button
-            class="sc-hLBbgP bFSXPk"
+            class="sc-dkrFOg blrkEw"
             kind="mono"
             role="button"
           >
             - Decrease
           </button>
           <button
-            class="sc-hLBbgP bFSXPk"
+            class="sc-dkrFOg blrkEw"
             kind="mono"
             role="button"
           >
             + Increase
           </button>
         </div>
-      </section>
+      </div>
     </div>
   </body>,
   "container": <div>
-    <section
-      class="sc-bcXHqe cgfMzA"
+    <div
+      class="sc-jSUZER"
     >
-      <header
-        class="sc-eDvSVe sc-jSUZER fXyNOr hCldj"
-      >
-        <div
-          class="sc-gKPRtg xFlkb"
-        >
-          <a
-            class="sc-gswNZR dXalQK"
-            href="/"
-            kind="text"
-            role="button"
-          >
-            MainPage
-          </a>
-          <a
-            class="sc-gswNZR dXalQK"
-            href="/example"
-            kind="text"
-            role="button"
-          >
-            ExamplePage
-          </a>
-        </div>
-      </header>
+      ExampleDetailPage
+      [undefined]
       <div
-        class="sc-eDvSVe fXyNOr"
-      />
-      <div
-        class="sc-pyfCe"
-      >
-        ExampleDetailPage
-        [undefined]
-      </div>
-      <div
-        class="sc-iBYQkv aRxZQ"
+        class="sc-hLBbgP HKOiB"
       >
         <p
-          class="sc-ftTHYK EzcYq"
+          class="sc-eDvSVe kahFsB"
         >
           1
         </p>
         <button
-          class="sc-hLBbgP bFSXPk"
+          class="sc-dkrFOg blrkEw"
           kind="mono"
           role="button"
         >
           - Decrease
         </button>
         <button
-          class="sc-hLBbgP bFSXPk"
+          class="sc-dkrFOg blrkEw"
           kind="mono"
           role="button"
         >
           + Increase
         </button>
       </div>
-    </section>
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

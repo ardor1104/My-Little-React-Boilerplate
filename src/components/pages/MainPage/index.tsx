@@ -1,5 +1,7 @@
-import loadable from 'utils/loadable';
+import styled from 'styled-components';
 
-const MainPage = loadable(() => import('./MainPage'));
+const Root = styled.div``;
 
-export default MainPage;
+export default function MainPage(): JSX.Element {
+  return <Root>MainPage</Root>;
+}

@@ -1,5 +1,14 @@
-import loadable from 'utils/loadable';
+import styled from 'styled-components';
 
-const ExamplePage = loadable(() => import('./ExamplePage'));
+import Button from 'components/atoms/Button';
 
-export default ExamplePage;
+const Root = styled.div``;
+
+export default function ExamplePage(): JSX.Element {
+  return (
+    <Root>
+      ExamplePage
+      <Button to='/example/1'>Go To Example Page 1</Button>
+    </Root>
+  );
+}
