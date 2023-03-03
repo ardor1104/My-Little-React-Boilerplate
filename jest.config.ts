@@ -81,6 +81,7 @@ export default async (): Promise<Config> => {
       '^redux/(.*)': '<rootDir>/src/redux/$1',
       '^hooks/(.*)': '<rootDir>/src/hooks/$1',
       '^utils/(.*)': '<rootDir>/src/utils/$1',
+      '^api/(.*)': ['<rootDir>/src/api/$1*'],
       '^lodash-es$': 'lodash',
     },
 
